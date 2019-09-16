@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+        <artifactId>gee4j-parent</artifactId>
+		<version>0.0.0_0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>cdi-parent</artifactId>
+	<packaging>pom</packaging>
+
+	<description>Parent module for CDI Specification</description>
+
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>https://repository.jboss.org/licenses/apache-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<modules>
+		<!--<module>spec</module>-->
+		<module>api</module>
+	</modules>
+	<build>
+		<defaultGoal>clean package</defaultGoal>
+	</build>
+
+</project>

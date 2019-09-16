@@ -1,0 +1,178 @@
+<!--
+  ~ JBoss, Home of Professional Open Source
+  ~ Copyright 2018, Red Hat, Inc., and individual contributors
+  ~ by the @authors tag. See the copyright.txt in the distribution for a
+  ~ full listing of individual contributors.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+		<artifactId>cdi-parent</artifactId>
+		<version>0.0.0_0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>jakarta.enterprise.cdi-api</artifactId>
+	<packaging>jar</packaging>
+
+	<name>javax.cdi</name>
+	<description>APIs for CDI (Contexts and Dependency Injection for Java)</description>
+
+	<url>http://cdi-spec.org</url>
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>https://repository.jboss.org/licenses/apache-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<issueManagement>
+		<system>JIRA</system>
+		<url>https://jira.jboss.org/browse/CDI</url>
+	</issueManagement>
+
+	<organization>
+		<name>JBoss by Red Hat, Inc.</name>
+		<url>https://jboss.org</url>
+	</organization>
+
+	<inceptionYear>2008</inceptionYear>
+
+	<developers>
+		<developer>
+			<name>Antoine Sabot-Durand</name>
+			<id>asabotdu</id>
+			<timezone>CET</timezone>
+			<organization>Red Hat Inc.</organization>
+			<roles>
+				<role>Specfication Lead</role>
+			</roles>
+			<email>asd[at]redhat[dot]com</email>
+		</developer>
+
+		<developer>
+			<name>Martin Kouba</name>
+			<id>mkouba</id>
+			<organization>Red Hat Inc.</organization>
+			<roles>
+				<role>RI tech lead</role>
+			</roles>
+			<email>mkouba[at]redhat[dot]com</email>
+		</developer>
+
+		<developer>
+			<name>Tomas Remes</name>
+			<id>tremes</id>
+			<organization>Red Hat Inc.</organization>
+			<roles>
+				<role>TCK tech lead</role>
+			</roles>
+			<email>tremes[at]redhat[dot]com</email>
+		</developer>
+
+		<developer>
+			<name>Mark Struberg</name>
+			<id>mstruberg</id>
+			<timezone>CET</timezone>
+			<roles>
+				<role>Implementation developer</role>
+			</roles>
+			<email>struberg[at]yahoo[dot]de</email>
+		</developer>
+
+		<developer>
+			<name>John D. Ament</name>
+			<id>johndament</id>
+			<organization>Independent</organization>
+			<timezone>EST</timezone>
+			<roles>
+				<role>EG Member</role>
+			</roles>
+			<email>johndament[at]apache[dot]org</email>
+		</developer>
+
+		<developer>
+			<name>Matej Novotny</name>
+			<id>manovotn</id>
+			<organization>Red Hat Inc.</organization>
+			<roles>
+				<role>TCK and RI developer</role>
+			</roles>
+			<email>manovotn[at]redhat[dot]com</email>
+		</developer>
+
+		<developer>
+			<name>Mark Paluch</name>
+			<id>mp911de</id>
+			<organization>Independent</organization>
+			<timezone>CET</timezone>
+			<roles>
+				<role>EG Member</role>
+			</roles>
+			<email>mpaluch[at]paluch[dot]biz</email>
+		</developer>
+
+	</developers>
+
+
+	<properties>
+		<atinject.api.version>1</atinject.api.version>
+		<uel.api.version>3.0.2</uel.api.version>
+		<interceptor.api.version>1.2.3</interceptor.api.version>
+		<maven-bundle-plugin.version>2.5.4</maven-bundle-plugin.version>
+		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+			<artifactId>jakarta.el</artifactId>
+		</dependency>
+
+		<dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+			<artifactId>jakarta.interceptor-api</artifactId>
+		</dependency>
+
+		<dependency>
+            <groupId>com.jwebmp.thirdparty</groupId>
+			<artifactId>javax.inject</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<scm>
+		<connection>scm:git:git@github.com:cdi-spec/cdi.git</connection>
+		<url>scm:git:git@github.com:cdi-spec/cdi.git</url>
+		<developerConnection>scm:git:git@github.com:cdi-spec/cdi.git</developerConnection>
+	</scm>
+
+	<profiles>
+
+	</profiles>
+
+	<build>
+		<testResources>
+			<testResource>
+				<filtering>true</filtering>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+	</build>
+
+
+</project>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 1997, 2018 Oracle and/or its affiliates and others.
+    All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Public License v. 2.0, which is available at
+    http://www.eclipse.org/legal/epl-2.0.
+
+    This Source Code may also be made available under the following Secondary
+    Licenses when the conditions for such availability set forth in the
+    Eclipse Public License v. 2.0 are satisfied: GNU General Public License,
+    version 2 with the GNU Classpath Exception, which is available at
+    https://www.gnu.org/software/classpath/license.html.
+
+    SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"> <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+        <artifactId>gee4j-parent</artifactId>
+        <version>0.0.0_0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jakarta.el</artifactId>
+
+    <name>javax.el</name>
+    <description>
+        Jakarta Expression Language provides a specification document, API, reference implementation and TCK 
+        that describes an expression language for Java applications.
+    </description>
+    <url>https://projects.eclipse.org/projects/ee4j.el</url>
+
+    <properties>
+        <!-- the bundle build number must be the same as the maven number -->
+        <bundle.version>3.0.3</bundle.version>
+        <!-- The most current api version -->
+        <spec.version>3.0</spec.version>
+        <extensionName>javax.el</extensionName>
+        <bundle.symbolicName>com.sun.el.javax.el</bundle.symbolicName>
+        <vendorName>Oracle Corporation</vendorName>
+        <findbugs.version>2.5.2</findbugs.version>
+        <findbugs.exclude>${project.basedir}/exclude.xml</findbugs.exclude>
+        <findbugs.threshold>High</findbugs.threshold>
+    </properties>
+    
+    <developers>
+        <developer>
+            <id>yaminikb</id>
+            <name>Yamini K B</name>
+            <organization>Oracle Corporation</organization>
+            <organizationUrl>http://www.oracle.com/</organizationUrl>
+        </developer>
+    </developers>
+
+    <contributors>
+        <contributor>
+            <name>Kin-man Chung</name>
+        </contributor>
+    </contributors>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/el-ri/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+            <url>http://www.eclipse.org/legal/epl-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+            <url>https://www.gnu.org/software/classpath/license.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <mailingLists>
+        <mailingList>
+            <name>Jakarta Expression Language mailing list</name>
+            <post>el-dev@eclipse.org</post>
+            <subscribe>https://dev.eclipse.org/mailman/listinfo/el-dev</subscribe>
+            <unsubscribe>https://dev.eclipse.org/mailman/listinfo/el-dev</unsubscribe>
+            <archive>https://dev.eclipse.org/mhonarc/lists/el-dev</archive>
+        </mailingList>
+    </mailingLists>
+    
+    <scm>
+        <connection>scm:git:https://github.com/eclipse-ee4j/el-ri.git</connection>
+        <developerConnection>
+            scm:git:git@github.com:eclipse-ee4j/el-ri.git
+        </developerConnection>
+        <url>https://github.com/eclipse-ee4j/el-ri</url>
+        <tag>HEAD</tag>
+    </scm>
+    
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>api/src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>impl/src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>LICENSE.md</include>
+                    <include>NOTICE.md</include>
+                </includes>
+                <targetPath>META-INF</targetPath>
+            </resource>
+        </resources>
+    
+        <plugins>
+            <!-- Use this to include both the api and impl sources -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>api/src/main/java</source>
+                                <source>impl/src/main/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

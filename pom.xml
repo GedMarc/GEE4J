@@ -1,0 +1,26 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+          <groupId>com.jwebmp.thirdparty</groupId>
+        <artifactId>third-party-modules</artifactId>
+        <version>0.0.0_0-SNAPSHOT</version>
+    </parent>
+	<groupId>com.jwebmp.thirdparty.gee4j</groupId>
+    <artifactId>gee4j-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <name>GEE4J Parent</name>
+    <description>JPMS Module-Info's for a few of the Jakarta Libraries. These will be removed as time goes by</description>
+    
+	<modules>
+        <module>cdi</module>
+        <module>ejb-api</module>
+        <module>interceptor-api</module>
+        <module>javax.el</module>
+        <module>javax.faces</module>
+        <module>jsp</module>
+        <module>jstl</module>
+	</modules>
+	
+</project>

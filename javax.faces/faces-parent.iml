@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_12">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="javax.servlet-api" />
+    <orderEntry type="module" module-name="jakarta.validation-api" />
+    <orderEntry type="module" module-name="jakarta.xml.bind-api" />
+    <orderEntry type="module" module-name="javax.activation" />
+    <orderEntry type="module" module-name="jakarta.activation" />
+    <orderEntry type="module" module-name="jakarta.el" />
+    <orderEntry type="module" module-name="javax.servlet.jsp.jstl" />
+    <orderEntry type="module" module-name="jakarta.servlet.jsp.jstl-api" />
+    <orderEntry type="module" module-name="jakarta.servlet.jsp-api" />
+    <orderEntry type="library" name="Maven: javax.persistence:javax.persistence-api:2.2" level="project" />
+  </component>
+</module>

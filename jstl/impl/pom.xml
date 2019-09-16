@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Public License v. 2.0, which is available at
+    http://www.eclipse.org/legal/epl-2.0.
+
+    This Source Code may also be made available under the following Secondary
+    Licenses when the conditions for such availability set forth in the
+    Eclipse Public License v. 2.0 are satisfied: GNU General Public License,
+    version 2 with the GNU Classpath Exception, which is available at
+    https://www.gnu.org/software/classpath/license.html.
+
+    SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+        <artifactId>jstl-parent</artifactId>
+        <version>0.0.0_0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>javax.servlet.jsp.jstl</artifactId>
+
+    <packaging>jar</packaging>
+    <name>jstl</name>
+
+    <description>JavaServer Pages(TM) Standard Tag Library API</description>
+    <url>https://projects.eclipse.org/projects/ee4j.jstl</url>
+    
+    <properties>
+        <spec.version>1.2</spec.version>
+        <extensionName>javax.servlet.jsp.jstl</extensionName>
+        <bundle.symbolicName>org.glassfish.web.javax.servlet.jsp.jstl</bundle.symbolicName>
+        <vendorName>Eclipse Foundation</vendorName>
+        <findbugs.version>3.0.5</findbugs.version>
+        <findbugs.exclude>${project.basedir}/exclude.xml</findbugs.exclude>
+        <findbugs.threshold>High</findbugs.threshold>
+    </properties>
+
+    <contributors>
+        <contributor>
+            <name>Kin Man Chung</name>
+        </contributor>
+    </contributors>
+    
+    <developers>
+        <developer>
+            <id>yaminikb</id>
+            <name>Yamini K B</name>
+            <organization>Oracle Corporation</organization>
+            <organizationUrl>http://www.oracle.com/</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+            <url>http://www.eclipse.org/legal/epl-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+            <url>https://www.gnu.org/software/classpath/license.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/jstl-api/issues</url>
+    </issueManagement>
+    <mailingLists>
+        <mailingList>
+          <name>JSTL dev mailing list</name>
+          <post>jstl-dev@eclipse.org</post>
+          <subscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</subscribe>
+          <unsubscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</unsubscribe>
+          <archive>https://dev.eclipse.org/mhonarc/lists/jstl-dev</archive>
+        </mailingList>
+    </mailingLists> 
+    <scm>
+        <connection>scm:git:https://github.com/eclipse-ee4j/jstl-api.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/eclipse-ee4j/jstl-api.git</developerConnection>
+        <url>https://github.com/eclipse-ee4j/jstl-api</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Extension-Name>${extensionName}</Extension-Name>
+                            <!--Specification-Title>${specificationTitle}</Specification-Title-->
+                            <Specification-Version>${spec.version}</Specification-Version>
+                            <Specification-Vendor>${vendorName}</Specification-Vendor>
+                            <!--Implementation-Title>${implementationTitle}</Implementation-Title-->
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                            <Implementation-Vendor>${vendorName}</Implementation-Vendor>
+                            <!--Implementation-Vendor-Id>com.sun</Implementation-Vendor-Id-->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                   <execution>
+                       <phase>package</phase>
+                       <goals>
+                           <goal>shade</goal>
+                       </goals>
+                       <configuration>
+                           <artifactSet>
+                                  <includes>
+                                      <include>xalan:xalan</include>
+                                  </includes>
+                           </artifactSet>
+                           <filters>
+                               <filter>
+                                   <artifact>xalan:xalan</artifact>
+                                   <excludes>
+                                      <exclude>META-INF/**</exclude>
+                                   </excludes>
+                                </filter>
+                           </filters>
+                           <relocations>
+                               <relocation>
+                                    <pattern>org.apache.xpath</pattern>
+                                    <shadedPattern>com.oracle.wls.shaded.org.apache.xpath</shadedPattern>
+                               </relocation>
+                               <relocation>
+                                    <pattern>org.apache.xml</pattern>
+                                    <shadedPattern>com.oracle.wls.shaded.org.apache.xml</shadedPattern>
+                               </relocation>
+                               <relocation>
+                                    <pattern>org.apache.xalan</pattern>
+                                    <shadedPattern>com.oracle.wls.shaded.org.apache.xalan</shadedPattern>
+                               </relocation>
+                               <relocation>
+                                    <pattern>org.apache.regexp</pattern>
+                                    <shadedPattern>com.oracle.wls.shaded.org.apache.regexp</shadedPattern>
+                               </relocation>
+                               <relocation>
+                                    <pattern>org.apache.bcel</pattern>
+                                    <shadedPattern>com.oracle.wls.shaded.org.apache.bcel</shadedPattern>
+                               </relocation>
+                               <relocation>
+                                    <pattern>java_cup.runtime</pattern>
+                                    <shadedPattern>com.oracle.wls.shaded.java_cup.runtime</shadedPattern>
+                               </relocation>
+                               <relocation>
+                                    <pattern>trax</pattern>
+                                    <shadedPattern>com.oracle.wls.shaded.trax</shadedPattern>
+                               </relocation>
+                           </relocations>
+                       </configuration>
+                   </execution>
+                </executions>
+               <dependencies>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                        <version>${maven.asm.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm-util</artifactId>
+                        <version>${maven.asm.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm-commons</artifactId>
+                        <version>${maven.asm.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.jwebmp.thirdparty</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+            <version>2.7.2</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>

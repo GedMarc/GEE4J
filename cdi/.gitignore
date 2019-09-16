@@ -1,0 +1,11 @@
+target
+.project
+.settings
+.classpath
+spec/cdi-spec.pdf
+spec/en/master-filtered.xml
+*.iml
+*.ipr
+*.iws
+.idea
+*.swp

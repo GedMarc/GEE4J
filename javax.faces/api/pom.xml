@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2017, 2018 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Public License v. 2.0, which is available at
+    http://www.eclipse.org/legal/epl-2.0.
+
+    This Source Code may also be made available under the following Secondary
+    Licenses when the conditions for such availability set forth in the
+    Eclipse Public License v. 2.0 are satisfied: GNU General Public License,
+    version 2 with the GNU Classpath Exception, which is available at
+    https://www.gnu.org/software/classpath/license.html.
+
+    SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+
+-->
+
+<!-- 
+
+    Project to create the JSF API jar and docs (vdldoc, renderkit docs).
+    
+    This depends on [mojarra home]/impl being installed first (mvn build install).
+
+ -->
+ 
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+         
+    <parent>
+        <groupId>com.jwebmp.thirdparty</groupId>
+        <artifactId>faces-parent</artifactId>
+        <version>0.0.0_0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>javax.faces</artifactId>
+
+
+    <packaging>jar</packaging>
+    <name>javax.faces</name>
+    
+    <properties>
+        <mojarra.version>3.0.0-m01-SNAPSHOT</mojarra.version>
+    </properties>
+    
+    <inceptionYear>1997</inceptionYear>
+    
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+            <url>http://www.eclipse.org/legal/epl-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+            <url>https://www.gnu.org/software/classpath/license.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <id>edburns</id>
+            <name>Ed Burns</name>
+            <email>edward.burns@oracle.com</email>
+            <organization>Oracle America, Inc.</organization>
+            <roles>
+                <role>project-owner</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        
+        <developer>
+            <id>mriem</id>
+            <name>Manfred Riem</name>
+            <email>manfred.riem@oracle.com</email>
+            <organization>Oracle America, Inc.</organization>
+            <roles>
+                <role>project-owner</role>
+            </roles>
+            <timezone>-6</timezone>
+        </developer>
+        
+        <developer>
+            <id>ren.zhijun.oracle</id>
+            <name>Zhijun Ren</name>
+            <email>ren.zhijun@oracle.com></email>
+            <organization>Oracle America, Inc.</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    
+    <contributors>
+        <contributor>
+            <name>Jennifer Ball</name>
+        </contributor>
+        <contributor>
+            <name>Deepak Gothe</name>
+        </contributor>
+        <contributor>
+            <name>Jacob Hookom</name>
+        </contributor>
+        <contributor>
+            <name>Justyna Horwat</name>
+        </contributor>
+        <contributor>
+            <name>Roger Kitain</name>
+        </contributor>
+        <contributor>
+            <name>Jason Lee</name>
+        </contributor>
+        <contributor>
+            <name>Craig McClanahan</name>
+        </contributor>
+        <contributor>
+            <name>Gregory Murray</name>
+        </contributor>
+        <contributor>
+            <name>Raj Premkumar</name>
+        </contributor>
+        <contributor>
+            <name>Stan Silvert</name>
+        </contributor>
+        <contributor>
+            <name>Jayashri Visvanathan</name>
+        </contributor>
+        <contributor>
+            <name>Mike Youngstrom</name>
+        </contributor>
+    </contributors>
+    
+    <mailingLists>
+        <mailingList>
+            <name>JSF Specification Mailing List</name>
+            <post>https://javaee.groups.io/g/jsf-spec</post>
+        </mailingList>
+    </mailingLists>
+    
+    <build>
+        <plugins>
+            <!-- 
+                Create VDL docs
+             -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>Copy-vdldoc-css</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/vdldoc</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/vdldoc</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+           <!-- <plugin>
+                <groupId>com.github.matinh.vdldoc</groupId>
+                <artifactId>vdldoc-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-vdldoc</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>vdldoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <srcDirectory>src/main/resources/com/sun/faces/metadata/taglib</srcDirectory>
+                    <css>jsf-api.css</css>
+                    <browserTitle>JSF ${project.version} VDL Documentation</browserTitle>
+                    <documentTitle>JSF ${project.version} VDL Documentation</documentTitle>
+                    <hideGeneratedBy>true</hideGeneratedBy>
+                    <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
+                </configuration>
+            </plugin>
+            -->
+            <plugin>
+                <groupId>org.omnifaces</groupId>
+                <artifactId>renderkitdoc-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-renderkitdoc</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <facesConfig>${project.basedir}/src/main/resources/com/sun/faces/standard-html-renderkit.xml</facesConfig>
+                    <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+                </configuration>
+            </plugin>
+            
+            <!-- 
+               Create API binary jar
+            
+               For the final artifact jar we only include the javax.* classes and resources that we compiled from
+               the unpackaged implementation source attachment jar. See the maven-dependency-plugin for this
+               unpackaging. This effectively gives us the API jar.
+            -->
+       <!--     <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>javax/**</include>
+                    </includes>
+                </configuration>
+            </plugin>-->
+            
+             <!-- 
+               Create sources for API jar
+             -->
+         <!--    <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-api-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <excludes>
+                                <exclude>com/**</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+            
+             <!-- 
+               Create Javadoc for API jar
+             -->
+          <!--  <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-api-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <windowtitle>JavaServer Faces 2.4 EDR 1 API</windowtitle>
+                            <doctitle>JavaServer Faces 2.4 EDR 1 API</doctitle>
+                            <excludePackageNames>com</excludePackageNames>
+                            <footer>DRAFT DRAFT DRAFT DRAFT</footer>
+                            <header>DRAFT DRAFT DRAFT DRAFT</header>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+           
+        </plugins>
+        <pluginManagement>
+
+        </pluginManagement>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.jwebmp.thirdparty</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <type>jar</type>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>javax.servlet.jsp</artifactId>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <type>jar</type>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty</groupId>
+            <artifactId>javax.inject</artifactId>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <type>jar</type>
+        </dependency>
+
+<!--
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-client-api</artifactId>
+            <type>jar</type>
+        </dependency>-->
+
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty</groupId>
+            <artifactId>jakarta.websocket-api</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.ejb-api</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+</project>
