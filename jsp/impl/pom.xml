@@ -28,7 +28,7 @@
     <artifactId>javax.servlet.jsp</artifactId>
 
     <packaging>jar</packaging>
-    <name>JSP implementation</name>
+    <name>javax.jsp</name>
 
     <description>JavaServer Pages API</description>
     <url>https://projects.eclipse.org/projects/ee4j.jsp</url>
