@@ -17,6 +17,6 @@
     <orderEntry type="module" module-name="javax.servlet.jsp.jstl" />
     <orderEntry type="module" module-name="jakarta.servlet.jsp.jstl-api" />
     <orderEntry type="module" module-name="jakarta.servlet.jsp-api" />
-    <orderEntry type="library" name="Maven: javax.persistence:javax.persistence-api:2.2" level="project" />
+    <orderEntry type="module" module-name="jakarta.persistence-api" />
   </component>
 </module>

@@ -1,0 +1,4 @@
+activeProfiles=Development,enable-builders,enable-utilities,enable-access,enable-bcm
+eclipse.preferences.version=1
+resolveWorkspaceProjects=true
+version=1
