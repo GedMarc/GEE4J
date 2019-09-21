@@ -1,4 +1,5 @@
-open module javax.faces {
+open module jakarta.faces {
+
 	exports javax.faces.model;
 	exports javax.faces.annotation;
 	exports javax.faces.bean;
