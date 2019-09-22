@@ -31,12 +31,12 @@
      <modelVersion>4.0.0</modelVersion>
          
     <parent>
-        <groupId>com.jwebmp.thirdparty</groupId>
+        <groupId>com.jwebmp.jpms.thirdparty</groupId>
         <artifactId>faces-parent</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.jwebmp.thirdparty</groupId>
+    <groupId>com.jwebmp.jpms.thirdparty</groupId>
     <artifactId>javax.faces</artifactId>
     <packaging>jar</packaging>
 
@@ -195,52 +195,52 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>javax.servlet.jsp</artifactId>
             <type>jar</type>
-        </dependency>
+            </dependency>
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <type>jar</type>
-        </dependency>
+            </dependency>
 
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty</groupId>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>javax.inject</artifactId>
             <type>jar</type>
-        </dependency>
+            </dependency>
 
         <dependency>
             <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId>
-        </dependency>
+            <artifactId>jakarta.annotation-api</artifactId><type>jar</type>
+            </dependency>
 
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
             <type>jar</type>
-        </dependency>
+            </dependency>
 
         <dependency>
             <groupId>javax.json</groupId>
-            <artifactId>javax.json-api</artifactId>
-        </dependency>
+            <artifactId>javax.json-api</artifactId><type>jar</type>
+            </dependency>
 
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty</groupId>
-            <artifactId>jakarta.websocket-api</artifactId>
-        </dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+            <artifactId>jakarta.websocket-api</artifactId><type>jar</type>
+            </dependency>
 
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
-            <artifactId>jakarta.ejb-api</artifactId>
-        </dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+            <artifactId>jakarta.ejb-api</artifactId><type>jar</type>
+            </dependency>
 
     </dependencies>
 

@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <artifactId>jstl-parent</artifactId>
-    <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+    <groupId>com.jwebmp.jpms.thirdparty</groupId>
     <version>0.0.0_0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
@@ -159,25 +159,25 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>com.jwebmp.thirdparty</groupId>
+      <groupId>com.jwebmp.jpms.thirdparty</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>0.0.0_0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+      <groupId>com.jwebmp.jpms.thirdparty</groupId>
       <artifactId>jakarta.servlet.jsp-api</artifactId>
       <version>0.0.0_0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+      <groupId>com.jwebmp.jpms.thirdparty</groupId>
       <artifactId>jakarta.el</artifactId>
       <version>0.0.0_0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+      <groupId>com.jwebmp.jpms.thirdparty</groupId>
       <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
       <version>0.0.0_0-SNAPSHOT</version>
       <scope>compile</scope>

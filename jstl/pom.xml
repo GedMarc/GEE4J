@@ -22,7 +22,7 @@
 he.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+        <groupId>com.jwebmp.jpms.thirdparty</groupId>
         <artifactId>gee4j-parent</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>

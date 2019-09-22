@@ -19,7 +19,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+        <groupId>com.jwebmp.jpms.thirdparty</groupId>
 		<artifactId>cdi-parent</artifactId>
 		<version>0.0.0_0-SNAPSHOT</version>
 	</parent>
@@ -139,19 +139,19 @@
 
 	<dependencies>
 		<dependency>
-            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
-			<artifactId>jakarta.el</artifactId>
-		</dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+			<artifactId>jakarta.el</artifactId><type>jar</type>
+            </dependency>
 
 		<dependency>
-            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
-			<artifactId>jakarta.interceptor-api</artifactId>
-		</dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+			<artifactId>jakarta.interceptor-api</artifactId><type>jar</type>
+            </dependency>
 
 		<dependency>
-            <groupId>com.jwebmp.thirdparty</groupId>
-			<artifactId>javax.inject</artifactId>
-		</dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+			<artifactId>javax.inject</artifactId><type>jar</type>
+            </dependency>
 
 	</dependencies>
 

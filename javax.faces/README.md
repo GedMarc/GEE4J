@@ -53,8 +53,8 @@ In case you're using Maven, you can find below the necessary coordinates:
         <groupId>javax</groupId>
         <artifactId>javaee-web-api</artifactId>
         <version>8.0</version>
-        <scope>provided</scope>
-    </dependency>
+        <scope>provided</scope><type>jar</type>
+            </dependency>
     ```
 
     In case you're targeting a Java EE 7.0 runtime, then you should manually upgrade any runtime-provided JSF 2.2 library to JSF 2.3 depending on the server used. In case of WildFly/JBoss EAP, [you need to manually package `jsf-api.jar` and `jsf-impl.jar` based on `javax.faces.jar` first][15]. In case of TomEE, just swap the `myfaces*.jar` files with `javax.faces.jar` in server's `/lib` folder. In case of Payara/GlassFish, just swap the `javax.faces.jar` file in server's `/glassfish/modules` folder.
@@ -65,28 +65,28 @@ In case you're using Maven, you can find below the necessary coordinates:
     <dependency>
         <groupId>org.glassfish</groupId>
         <artifactId>javax.faces</artifactId>
-        <version><!-- Use latest 2.3.x version. --></version>
-    </dependency>
+        <version><!-- Use latest 2.3.x version. --></version><type>jar</type>
+            </dependency>
     <dependency>
         <groupId>org.jboss.weld.servlet</groupId>
         <artifactId>weld-servlet-shaded</artifactId>
-        <version>3.0.0.Final</version>
-    </dependency>
+        <version>3.0.0.Final</version><type>jar</type>
+            </dependency>
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>jstl</artifactId>
-        <version>1.2</version>
-    </dependency>
+        <version>1.2</version><type>jar</type>
+            </dependency>
     <dependency> <!-- Optional, only when <f:websocket> is used. -->
         <groupId>org.glassfish</groupId>
         <artifactId>javax.json</artifactId>
-        <version>1.1</version>
-    </dependency>
+        <version>1.1</version><type>jar</type>
+            </dependency>
     <dependency> <!-- Optional, only when <f:validateBean> or <f:validateWholeBean> is used. -->
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator</artifactId>
-        <version>6.0.1.Final</version>
-    </dependency>
+        <version>6.0.1.Final</version><type>jar</type>
+            </dependency>
     ```
 
     You can check [`org.glassfish:javax.faces`][16] repository to find current latest Mojarra 2.3.x version.

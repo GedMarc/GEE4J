@@ -20,7 +20,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"> <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+        <groupId>com.jwebmp.jpms.thirdparty</groupId>
         <artifactId>interceptor-api-parent</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
@@ -88,10 +88,10 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>jakarta.ejb-api</artifactId>
             <type>jar</type>
-        </dependency>
+            </dependency>
     </dependencies>
 
     <build>

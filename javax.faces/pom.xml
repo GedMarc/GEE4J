@@ -20,12 +20,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"> <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+        <groupId>com.jwebmp.jpms.thirdparty</groupId>
         <artifactId>gee4j-parent</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.jwebmp.thirdparty</groupId>
+    <groupId>com.jwebmp.jpms.thirdparty</groupId>
     <artifactId>faces-parent</artifactId>
     <packaging>pom</packaging>
     
@@ -57,40 +57,40 @@
      <dependencies>
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+            <artifactId>javax.servlet-api</artifactId><type>jar</type>
+            </dependency>
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
-        </dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+            <artifactId>jakarta.validation-api</artifactId><type>jar</type>
+            </dependency>
 
         <dependency>
-            <groupId>com.jwebmp.thirdparty</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-        </dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId><type>jar</type>
+            </dependency>
 
          <dependency>
-             <groupId>com.jwebmp.thirdparty.gee4j</groupId>
-             <artifactId>jakarta.el</artifactId>
-         </dependency>
+             <groupId>com.jwebmp.jpms.thirdparty</groupId>
+             <artifactId>jakarta.el</artifactId><type>jar</type>
+            </dependency>
 
 
          <dependency>
-             <groupId>com.jwebmp.thirdparty.gee4j</groupId>
-             <artifactId>javax.servlet.jsp.jstl</artifactId>
-         </dependency>
+             <groupId>com.jwebmp.jpms.thirdparty</groupId>
+             <artifactId>javax.servlet.jsp.jstl</artifactId><type>jar</type>
+            </dependency>
 
          <dependency>
-             <groupId>com.jwebmp.thirdparty.gee4j</groupId>
-             <artifactId>jakarta.servlet.jsp-api</artifactId>
-         </dependency>
+             <groupId>com.jwebmp.jpms.thirdparty</groupId>
+             <artifactId>jakarta.servlet.jsp-api</artifactId><type>jar</type>
+            </dependency>
 
          <dependency>
-             <groupId>com.jwebmp.thirdparty.hibernate</groupId>
-             <artifactId>jakarta.persistence-api</artifactId>
-         </dependency>
+             <groupId>com.jwebmp.jpms.thirdparty.hibernate</groupId>
+             <artifactId>jakarta.persistence-api</artifactId><type>jar</type>
+            </dependency>
 
      </dependencies>
 
