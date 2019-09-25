@@ -25,7 +25,7 @@
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.jwebmp.jpms.thirdparty</groupId>
+   
     <artifactId>faces-parent</artifactId>
     <packaging>pom</packaging>
     
@@ -88,7 +88,7 @@
             </dependency>
 
          <dependency>
-             <groupId>com.jwebmp.jpms.thirdparty.hibernate</groupId>
+             <groupId>com.jwebmp.jpms.thirdparty</groupId>
              <artifactId>jakarta.persistence-api</artifactId><type>jar</type>
             </dependency>
 

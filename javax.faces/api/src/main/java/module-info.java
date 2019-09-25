@@ -82,7 +82,7 @@ open module jakarta.faces {
 	requires javax.servlet.api;
 	requires java.xml;
 	requires javax.el;
-	requires javax.servlet.jsp.jstl;
+	requires javax.servlet.jsp.jstl.api;
 	requires java.sql;
 	requires java.naming;
 	requires java.desktop;

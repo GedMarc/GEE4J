@@ -1,4 +1,4 @@
-module javax.servlet.jsp.jstl {
+module javax.servlet.jsp.jstl.api {
 	requires javax.servlet.api;
 	requires javax.servlet.jsp.api;
 	requires javax.el;

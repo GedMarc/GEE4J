@@ -29,11 +29,11 @@
     <artifactId>javax.servlet.jsp.jstl</artifactId>
 
     <packaging>jar</packaging>
-    <name>jstl</name>
+    <name>jstl-impl</name>
 
     <description>JavaServer Pages(TM) Standard Tag Library API</description>
     <url>https://projects.eclipse.org/projects/ee4j.jstl</url>
-    
+
     <properties>
         <spec.version>1.2</spec.version>
         <extensionName>javax.servlet.jsp.jstl</extensionName>
@@ -49,7 +49,7 @@
             <name>Kin Man Chung</name>
         </contributor>
     </contributors>
-    
+
     <developers>
         <developer>
             <id>yaminikb</id>
@@ -77,13 +77,13 @@
     </issueManagement>
     <mailingLists>
         <mailingList>
-          <name>JSTL dev mailing list</name>
-          <post>jstl-dev@eclipse.org</post>
-          <subscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</subscribe>
-          <unsubscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</unsubscribe>
-          <archive>https://dev.eclipse.org/mhonarc/lists/jstl-dev</archive>
+            <name>JSTL dev mailing list</name>
+            <post>jstl-dev@eclipse.org</post>
+            <subscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</subscribe>
+            <unsubscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</unsubscribe>
+            <archive>https://dev.eclipse.org/mhonarc/lists/jstl-dev</archive>
         </mailingList>
-    </mailingLists> 
+    </mailingLists>
     <scm>
         <connection>scm:git:https://github.com/eclipse-ee4j/jstl-api.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/eclipse-ee4j/jstl-api.git</developerConnection>
@@ -95,96 +95,103 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Extension-Name>${extensionName}</Extension-Name>
-                            <!--Specification-Title>${specificationTitle}</Specification-Title-->
-                            <Specification-Version>${spec.version}</Specification-Version>
-                            <Specification-Vendor>${vendorName}</Specification-Vendor>
-                            <!--Implementation-Title>${implementationTitle}</Implementation-Title-->
-                            <Implementation-Version>${project.version}</Implementation-Version>
-                            <Implementation-Vendor>${vendorName}</Implementation-Vendor>
-                            <!--Implementation-Vendor-Id>com.sun</Implementation-Vendor-Id-->
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.0</version>
                 <executions>
-                   <execution>
-                       <phase>package</phase>
-                       <goals>
-                           <goal>shade</goal>
-                       </goals>
-                       <configuration>
-                           <artifactSet>
-                                  <includes>
-                                      <include>xalan:xalan</include>
-                                  </includes>
-                           </artifactSet>
-                           <filters>
-                               <filter>
-                                   <artifact>xalan:xalan</artifact>
-                                   <excludes>
-                                      <exclude>META-INF/**</exclude>
-                                   </excludes>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>xalan:xalan</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>xalan:xalan</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
                                 </filter>
-                           </filters>
-                           <relocations>
-                               <relocation>
+                            </filters>
+                            <relocations>
+                                <relocation>
                                     <pattern>org.apache.xpath</pattern>
                                     <shadedPattern>com.oracle.wls.shaded.org.apache.xpath</shadedPattern>
-                               </relocation>
-                               <relocation>
+                                </relocation>
+                                <relocation>
                                     <pattern>org.apache.xml</pattern>
                                     <shadedPattern>com.oracle.wls.shaded.org.apache.xml</shadedPattern>
-                               </relocation>
-                               <relocation>
+                                </relocation>
+                                <relocation>
                                     <pattern>org.apache.xalan</pattern>
                                     <shadedPattern>com.oracle.wls.shaded.org.apache.xalan</shadedPattern>
-                               </relocation>
-                               <relocation>
+                                </relocation>
+                                <relocation>
                                     <pattern>org.apache.regexp</pattern>
                                     <shadedPattern>com.oracle.wls.shaded.org.apache.regexp</shadedPattern>
-                               </relocation>
-                               <relocation>
+                                </relocation>
+                                <relocation>
                                     <pattern>org.apache.bcel</pattern>
                                     <shadedPattern>com.oracle.wls.shaded.org.apache.bcel</shadedPattern>
-                               </relocation>
-                               <relocation>
+                                </relocation>
+                                <relocation>
                                     <pattern>java_cup.runtime</pattern>
                                     <shadedPattern>com.oracle.wls.shaded.java_cup.runtime</shadedPattern>
-                               </relocation>
-                               <relocation>
+                                </relocation>
+                                <relocation>
                                     <pattern>trax</pattern>
                                     <shadedPattern>com.oracle.wls.shaded.trax</shadedPattern>
-                               </relocation>
-                           </relocations>
-                       </configuration>
-                   </execution>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
                 </executions>
-               <dependencies>
+                <dependencies>
                     <dependency>
                         <groupId>org.ow2.asm</groupId>
                         <artifactId>asm</artifactId>
-                        <version>${maven.asm.version}</version><type>jar</type>
-            </dependency>
+                        <version>${maven.asm.version}</version>
+                        <type>jar</type>
+                    </dependency>
                     <dependency>
                         <groupId>org.ow2.asm</groupId>
                         <artifactId>asm-util</artifactId>
-                        <version>${maven.asm.version}</version><type>jar</type>
-            </dependency>
+                        <version>${maven.asm.version}</version>
+                        <type>jar</type>
+                    </dependency>
                     <dependency>
                         <groupId>org.ow2.asm</groupId>
                         <artifactId>asm-commons</artifactId>
-                        <version>${maven.asm.version}</version><type>jar</type>
-            </dependency>
+                        <version>${maven.asm.version}</version>
+                        <type>jar</type>
+                    </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.moditect</groupId>
+                <artifactId>moditect-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-module-infos</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>add-module-info</goal>
+                        </goals>
+                        <configuration>
+                            <overwriteExistingFiles>true</overwriteExistingFiles>
+                            <module>
+                                <moduleInfoFile>
+                                    src/jre11/module-info.java
+                                </moduleInfoFile>
+                            </module>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
@@ -205,27 +212,43 @@
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope><type>jar</type>
-            </dependency>
+            <scope>provided</scope>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>jakarta.servlet.jsp-api</artifactId>
-            <scope>provided</scope><type>jar</type>
-            </dependency>
+            <scope>provided</scope>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>jakarta.el</artifactId>
-            <scope>provided</scope><type>jar</type>
-            </dependency>
+            <scope>provided</scope>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
-            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <type>jar</type>
+        </dependency>
+
         <dependency>
             <groupId>xalan</groupId>
             <artifactId>xalan</artifactId>
             <version>2.7.2</version>
-            <optional>true</optional><type>jar</type>
-            </dependency>
+            <exclusions>
+                <exclusion>
+                    <artifactId>xml-apis</artifactId>
+                    <groupId>xml-apis</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>serializer</artifactId>
+                    <groupId>xalan</groupId>
+                </exclusion>
+            </exclusions>
+            <optional>true</optional>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>

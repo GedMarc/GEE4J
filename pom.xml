@@ -6,7 +6,7 @@
         <artifactId>third-party-modules</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
-	<groupId>com.jwebmp.jpms.thirdparty</groupId>
+	
     <artifactId>gee4j-parent</artifactId>
     <packaging>pom</packaging>
 
@@ -20,7 +20,15 @@
         <module>javax.el</module>
         <module>javax.faces</module>
         <module>jsp</module>
-        <module>jstl</module>
 	</modules>
-	
+
+    <profiles>
+        <profile>
+            <id>enable-jstl</id>
+            <modules>
+                <module>jstl</module>
+            </modules>
+        </profile>
+    </profiles>
+
 </project>

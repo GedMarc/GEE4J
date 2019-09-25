@@ -24,30 +24,29 @@
     This depends on [mojarra home]/impl being installed first (mvn build install).
 
  -->
- 
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-     <modelVersion>4.0.0</modelVersion>
-         
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.jwebmp.jpms.thirdparty</groupId>
         <artifactId>faces-parent</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.jwebmp.jpms.thirdparty</groupId>
     <artifactId>javax.faces</artifactId>
     <packaging>jar</packaging>
 
     <name>javax.faces</name>
-    
+
     <properties>
         <mojarra.version>3.0.0-m01-SNAPSHOT</mojarra.version>
     </properties>
-    
+
     <inceptionYear>1997</inceptionYear>
-    
+
     <licenses>
         <license>
             <name>EPL 2.0</name>
@@ -60,7 +59,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    
+
     <developers>
         <developer>
             <id>edburns</id>
@@ -72,7 +71,7 @@
             </roles>
             <timezone>-5</timezone>
         </developer>
-        
+
         <developer>
             <id>mriem</id>
             <name>Manfred Riem</name>
@@ -83,7 +82,7 @@
             </roles>
             <timezone>-6</timezone>
         </developer>
-        
+
         <developer>
             <id>ren.zhijun.oracle</id>
             <name>Zhijun Ren</name>
@@ -95,7 +94,7 @@
             <timezone>+8</timezone>
         </developer>
     </developers>
-    
+
     <contributors>
         <contributor>
             <name>Jennifer Ball</name>
@@ -134,20 +133,20 @@
             <name>Mike Youngstrom</name>
         </contributor>
     </contributors>
-    
+
     <mailingLists>
         <mailingList>
             <name>JSF Specification Mailing List</name>
             <post>https://javaee.groups.io/g/jsf-spec</post>
         </mailingList>
     </mailingLists>
-    
+
     <build>
         <plugins>
             <!-- 
                 Create VDL docs
              -->
-          <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
@@ -192,55 +191,67 @@
 
         </pluginManagement>
     </build>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>javax.servlet.jsp</artifactId>
             <type>jar</type>
-            </dependency>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.jwebmp.jpms.thirdparty</groupId>
+            <artifactId>javax.servlet.jsp.jstl</artifactId>
+            <type>jar</type>
+        </dependency>
 
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <type>jar</type>
-            </dependency>
+        </dependency>
+
 
 
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>javax.inject</artifactId>
             <type>jar</type>
-            </dependency>
+        </dependency>
 
         <dependency>
             <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <type>jar</type>
+        </dependency>
 
 
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
             <type>jar</type>
-            </dependency>
+        </dependency>
 
         <dependency>
             <groupId>javax.json</groupId>
-            <artifactId>javax.json-api</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>javax.json-api</artifactId>
+            <type>jar</type>
+        </dependency>
 
 
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
-            <artifactId>jakarta.websocket-api</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>jakarta.websocket-api</artifactId>
+            <type>jar</type>
+        </dependency>
 
 
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
-            <artifactId>jakarta.ejb-api</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>jakarta.ejb-api</artifactId>
+            <type>jar</type>
+        </dependency>
 
     </dependencies>
 

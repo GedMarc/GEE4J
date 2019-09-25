@@ -40,7 +40,7 @@
         <bundle.symbolicName>javax.servlet.jsp.jstl-api</bundle.symbolicName>
         <vendorName>Eclipse Foundation</vendorName>
         <findbugs.version>3.0.5</findbugs.version>
-        <findbugs.exclude />
+        <findbugs.exclude/>
         <findbugs.threshold>High</findbugs.threshold>
     </properties>
 
@@ -49,7 +49,7 @@
             <name>Kin Man Chung</name>
         </contributor>
     </contributors>
-    
+
     <developers>
         <developer>
             <id>yaminikb</id>
@@ -77,13 +77,13 @@
     </issueManagement>
     <mailingLists>
         <mailingList>
-          <name>JSTL dev mailing list</name>
-          <post>jstl-dev@eclipse.org</post>
-          <subscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</subscribe>
-          <unsubscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</unsubscribe>
-          <archive>https://dev.eclipse.org/mhonarc/lists/jstl-dev</archive>
+            <name>JSTL dev mailing list</name>
+            <post>jstl-dev@eclipse.org</post>
+            <subscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</subscribe>
+            <unsubscribe>https://dev.eclipse.org/mailman/listinfo/jstl-dev</unsubscribe>
+            <archive>https://dev.eclipse.org/mhonarc/lists/jstl-dev</archive>
         </mailingList>
-    </mailingLists> 
+    </mailingLists>
     <scm>
         <connection>scm:git:https://github.com/eclipse-ee4j/jstl-api.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/eclipse-ee4j/jstl-api.git</developerConnection>
@@ -110,15 +110,18 @@
     <dependencies>
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
-            <artifactId>javax.servlet-api</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>javax.servlet-api</artifactId>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
-            <artifactId>jakarta.servlet.jsp-api</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>com.jwebmp.jpms.thirdparty</groupId>
-            <artifactId>jakarta.el</artifactId><type>jar</type>
-            </dependency>
+            <artifactId>jakarta.el</artifactId>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>
